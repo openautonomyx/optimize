@@ -1,0 +1,19 @@
+{
+  "name": "autonomyx-optimize",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "db:generate": "pnpm --filter @autonomyx/db db:generate",
+    "db:migrate": "pnpm --filter @autonomyx/db db:migrate",
+    "db:seed": "pnpm --filter @autonomyx/db db:seed"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.12",
+    "typescript": "^5.6.3"
+  }
+}
