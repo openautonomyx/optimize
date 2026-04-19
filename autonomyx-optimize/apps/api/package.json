@@ -1,0 +1,28 @@
+{
+  "name": "@autonomyx/api",
+  "version": "0.1.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@autonomyx/config": "workspace:*",
+    "@autonomyx/db": "workspace:*",
+    "@autonomyx/types": "workspace:*",
+    "@fastify/multipart": "^8.3.0",
+    "@fastify/sensible": "^5.6.0",
+    "bullmq": "^5.16.0",
+    "fastify": "^4.28.1",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "pino": "^9.4.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.7",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}
