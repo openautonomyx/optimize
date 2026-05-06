@@ -1,4 +1,13 @@
-import { PrismaClient, RecommendationStatus, RecommendationType, RenewalStatus, SpendCategory, ContractStatus, WorkflowStatus } from "@prisma/client";
+import bcrypt from "bcryptjs";
+import {
+  ContractStatus,
+  PrismaClient,
+  RecommendationStatus,
+  RecommendationType,
+  RenewalStatus,
+  SpendCategory,
+  WorkflowStatus
+} from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -7,6 +16,31 @@ async function main() {
     where: { slug: "demo" },
     update: {},
     create: { name: "Demo Corp", slug: "demo" }
+  });
+
+  const adminRole = await prisma.role.upsert({
+    where: { tenantId_name: { tenantId: tenant.id, name: "admin" } },
+    update: {},
+    create: { tenantId: tenant.id, name: "admin" }
+  });
+
+  const passwordHash = await bcrypt.hash("password123", 12);
+  const adminUser = await prisma.user.upsert({
+    where: { tenantId_email: { tenantId: tenant.id, email: "admin@demo.local" } },
+    update: { passwordHash, isActive: true },
+    create: {
+      tenantId: tenant.id,
+      email: "admin@demo.local",
+      name: "Demo Admin",
+      passwordHash,
+      isActive: true
+    }
+  });
+
+  await prisma.userRole.upsert({
+    where: { userId_roleId: { userId: adminUser.id, roleId: adminRole.id } },
+    update: {},
+    create: { userId: adminUser.id, roleId: adminRole.id }
   });
 
   const [aws, slack, openai] = await Promise.all([
