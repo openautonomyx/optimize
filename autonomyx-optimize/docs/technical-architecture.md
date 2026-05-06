@@ -2,7 +2,7 @@
 
 **Version**: 1.0  
 **Created**: 2026-05-05  
-**Scope**: API, Frontend, Database, Agent Architecture, Deployment
+**Scope**: API, Frontend, Database, Optimizing Agent Architecture, Deployment
 
 ## Stack
 
@@ -19,7 +19,18 @@
 - API handles tenancy, RBAC, route authorization, workflow orchestration, and audit logging.
 - Worker layer executes specialist analysts and governance jobs asynchronously.
 - PostgreSQL persists tenant-scoped entities and decision/execution trails.
-- External integrations ingest cloud, SaaS, and LLM usage data.
+- External integrations ingest SaaS, LLM, and cloud FinOps usage, billing, contract, and telemetry data.
+
+
+## Product Mode Architecture
+
+Autonomyx Optimize exposes one optimizing-agent workflow across three modes:
+
+1. **SaaS Cost Optimization** for unused licenses, duplicate tools, over-provisioned plans, vendor pricing, and renewal exposure.
+2. **LLM Cost Optimization** for model routing, token spend, prompt/context bloat, retries, tool calls, caching, batching, summarization, and fallback-model strategy.
+3. **Cloud FinOps** for idle compute, unattached storage, unused IPs, rightsizing, autoscaling, reserved instances, and savings plans.
+
+Every mode follows the same control loop: ingest data, analyze waste, recommend actions, simulate tradeoffs, route or execute approved work, and measure realized savings.
 
 ## Database Design (High-Level)
 
@@ -59,7 +70,7 @@ State management is centered on server state via React Query and API wrappers.
 ## Agent Framework
 
 BullMQ-backed stateless jobs:
-- Scheduled: SaaS, Cloud, LLM cost analysts
+- Scheduled: SaaS Cost Optimization, LLM Cost Optimization, and Cloud FinOps analysts
 - On-demand: Vendor negotiation, OSS replacement, simulation
 - Event-driven: Approval router, compliance checks, execution engine
 - Challenge: Skeptic agent to validate assumptions and hidden costs

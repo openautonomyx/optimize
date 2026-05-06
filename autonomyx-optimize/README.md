@@ -1,6 +1,39 @@
 # Autonomyx Optimize
 
-Production-grade MVP scaffold for a multi-tenant technology spend operating system.
+Autonomyx Optimize is an AI-powered cost optimization agent for modern technology spend.
+
+It operates in three optimization modes:
+
+1. SaaS Cost Optimization
+2. LLM Cost Optimization
+3. Cloud FinOps
+
+The platform ingests spend, usage, contract, billing, and telemetry data, then identifies savings opportunities, prioritizes recommendations, and helps teams execute cost-saving actions with governance and auditability.
+
+> **One optimizing agent for SaaS waste, LLM spend, and cloud FinOps.**
+
+## Optimization Modes
+
+| Mode | Buyer | Main metric | Focus |
+| --- | --- | --- | --- |
+| SaaS Cost Optimization | CFO, IT, Procurement | SaaS savings | Reduce wasted SaaS spend from unused seats, duplicate tools, over-provisioned plans, and renewal exposure. |
+| LLM Cost Optimization | AI Engineering, CTO, Product | Cost per AI task | Reduce AI and token spend without hurting quality through model routing, caching, batching, prompt trimming, and context controls. |
+| Cloud FinOps | Platform, DevOps, Finance | Cloud cost reduction | Optimize cloud infrastructure spend by finding idle resources, rightsizing workloads, and improving commitment coverage. |
+
+## Agent Workflow
+
+1. **Ingest** billing, usage, contracts, logs, and telemetry
+2. **Analyze** waste, anomalies, duplicates, and overuse
+3. **Recommend** savings actions with confidence and impact
+4. **Simulate** risk, savings, and quality tradeoffs
+5. **Execute or route** approvals, tickets, vendor actions, or infrastructure changes
+6. **Measure** realized savings over time
+
+## Example Recommendations
+
+- **SaaS Cost Optimization**: “Downgrade 42 inactive seats from Enterprise to Pro.”
+- **LLM Cost Optimization**: “Route classification tasks from GPT-4-class model to a smaller model.”
+- **Cloud FinOps**: “Downsize staging database from 4 vCPU to 2 vCPU.”
 
 ## Stack
 - Next.js + TypeScript + Tailwind (`apps/web`)
