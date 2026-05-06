@@ -13,6 +13,7 @@
     "@autonomyx/types": "workspace:*",
     "@fastify/multipart": "^8.3.0",
     "@fastify/sensible": "^5.6.0",
+    "bcryptjs": "^2.4.3",
     "bullmq": "^5.16.0",
     "fastify": "^4.28.1",
     "ioredis": "^5.4.1",
@@ -21,6 +22,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.7",
     "tsx": "^4.19.1",
     "typescript": "^5.6.3"
