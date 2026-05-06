@@ -3,13 +3,15 @@
 **Version**: 1.0  
 **Created**: 2026-05-05  
 **Status**: Product Definition  
-**Product**: Technology Spend Operating System (Multi-Tenant SaaS)
+**Product**: Optimizing Agent for SaaS, LLM, and Cloud FinOps Spend (Multi-Tenant SaaS)
 
 ## Executive Summary
 
-Autonomyx Optimize is a multi-tenant, agentic cost intelligence platform that continuously analyzes, optimizes, and governs technology spend across SaaS applications, cloud infrastructure, LLM/AI usage, vendor contracts, and managed services.
+Autonomyx Optimize is a multi-tenant optimizing agent for modern technology spend across SaaS applications, LLM/AI usage, and cloud FinOps. It continuously analyzes waste, recommends savings actions, simulates tradeoffs, routes approvals, and measures realized impact.
 
 It answers one continuous question: **Where are we overspending, why, what should we do, and what savings can we unlock safely?**
+
+**Positioning**: One optimizing agent for SaaS waste, LLM spend, and cloud FinOps.
 
 The system is governance-first and human-in-the-loop, with strict Separation of Duties (SoD): **Detect → Decide → Do**.
 
@@ -38,6 +40,30 @@ Build the operating system for technology spend governance that combines:
 3. Compliance/risk checks happen before approval
 4. Open-source alternatives are systematically evaluated
 5. Financial impact is simulated and validated
+
+
+## Optimization Modes
+
+| Mode | Buyer | Main metric | Primary optimization target |
+| --- | --- | --- | --- |
+| SaaS Cost Optimization | CFO, IT, Procurement | SaaS savings | Unused seats, duplicate tools, over-provisioned plans, pricing variance, and renewal exposure |
+| LLM Cost Optimization | AI Engineering, CTO, Product | Cost per AI task | Model routing, prompt cost, retries, tool calls, context bloat, caching, batching, summarization, and fallback models |
+| Cloud FinOps | Platform, DevOps, Finance | Cloud cost reduction | Idle compute, unattached disks, oversized instances, unused IPs, reserved capacity, savings plans, autoscaling, and rightsizing |
+
+### Mode-Specific Recommendation Examples
+
+- **SaaS Cost Optimization**: downgrade inactive seats, consolidate overlapping tools, or cancel unused licenses before renewal.
+- **LLM Cost Optimization**: route simple classification tasks to smaller models, cache repeated policy-check prompts, or trim retrieval context.
+- **Cloud FinOps**: downsize staging databases, delete unattached volumes, or move steady workloads to reserved capacity.
+
+## Optimizing Agent Workflow
+
+1. **Ingest** billing, usage, contracts, logs, and telemetry.
+2. **Analyze** waste, anomalies, duplicates, and overuse.
+3. **Recommend** savings actions with confidence and impact.
+4. **Simulate** risk, savings, and quality tradeoffs.
+5. **Execute or route** approvals, tickets, vendor actions, or infrastructure changes.
+6. **Measure** realized savings over time.
 
 ## Separation of Duties Architecture
 
