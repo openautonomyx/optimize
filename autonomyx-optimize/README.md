@@ -1,6 +1,6 @@
-# Autonomyx Optimize
+# Solana ATP Token Trader
 
-Production-grade MVP scaffold for a multi-tenant technology spend operating system.
+A production-grade MVP scaffold for an LLM token trading terminal built with Next.js, TypeScript, Tailwind, and Solana-inspired settlement flows.
 
 ## Stack
 - Next.js + TypeScript + Tailwind (`apps/web`)
@@ -8,6 +8,11 @@ Production-grade MVP scaffold for a multi-tenant technology spend operating syst
 - BullMQ worker (`apps/worker`)
 - Prisma + PostgreSQL (`packages/db`)
 - Shared config/types (`packages/config`, `packages/types`)
+
+## Product Experience
+- `/trade` hosts the primary Solana token swap terminal.
+- Portfolio, agent signals, liquidity, and fee pages support the trading workflow.
+- ATP-style copy models usage-metered AI agent outputs settling through Solana payment rails.
 
 ## Quick Start
 1. Install deps: `pnpm install`
@@ -35,7 +40,7 @@ Production-grade MVP scaffold for a multi-tenant technology spend operating syst
 - Env validation in `@autonomyx/config`
 
 ## Future Work
-- SSO provider integration (SAML/OIDC)
-- Object storage for import files
-- Full parser validation per connector type
-- Forecasting/anomaly models
+- Wire wallet adapters for Phantom and Backpack signing
+- Connect swap quotes to Solana DEX aggregators
+- Add ATP settlement service integration for paid agent recommendations
+- Persist portfolio, orders, and settlement receipts
